@@ -19,7 +19,7 @@ const Hero = () => {
     <div className=' relative w-screen'>
         {/* image  */}
         <div className='w-full'>
-            <img className=' w-full h-[300px] md:h-[500px] object-cover' src={heroData[heroDataState].image} alt="" />
+            <img className=' w-full h-[300px] md:h-[500px] object-cover ' src={heroData[heroDataState].image} alt="" />
         </div>
 
         {/* image data  */}

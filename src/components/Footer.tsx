@@ -19,7 +19,7 @@ const Footer = () => {
           </p>
         </div>
 
-        <div className=" w-[50%] flex gap-16 justify-between mt-6 border-t-2">
+        <div className=" w-[50%] flex flex-col   justify-between mt-6 border-t-2">
           {/* constact us  and follow us */}
           <div className=" ml-12">
             {/* Contact us  */}
@@ -38,8 +38,8 @@ const Footer = () => {
             </div>
           </div>
           {/* follow us ? */}
-          <div className="">
-            <h4 className=" mt-16 text-xl mb-4">Follow Us</h4>
+          <div className=" ml-12">
+            <h4 className=" mt-8 text-xl mb-4">Follow Us</h4>
             <div className=" flex gap-5">
               <FaFacebook size={25} color=""  />
               <FaInstagramSquare size={25} color=""  />

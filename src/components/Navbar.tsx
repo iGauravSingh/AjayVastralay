@@ -7,7 +7,7 @@ import { IoIosArrowDown } from "react-icons/io";
 // remember to worrk with mobile first design
 const Navbar = () => {
   return (
-    <nav className=" w-screen h-[7rem] flex justify-between items-center border-b-4 shadow-lg px-6">
+    <nav className=" w-screen h-[7rem] z-10 flex justify-between items-center border-b-4 shadow-lg px-6">
 
       <div className=" flex justify-center items-center gap-16 md:pl-14">
         {/* logo  */}
@@ -38,7 +38,7 @@ const Navbar = () => {
       
 
       {/* icons  */}
-      <div className=" flex gap-6">
+      <div className=" flex gap-6 mr-2 md:mr-5">
         <CiHeart size={25} />
         <div className=" relative">
         <BsCart2 size={25} />
@@ -46,7 +46,7 @@ const Navbar = () => {
           <p className=" text-white">1</p>
         </div>
         </div>
-        <div className=" hidden md:block"><GiHamburgerMenu size={25} /></div>
+        <div className=" md:hidden"><GiHamburgerMenu size={25} /></div>
       </div>
     </nav>
   )

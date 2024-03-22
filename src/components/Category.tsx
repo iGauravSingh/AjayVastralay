@@ -66,7 +66,7 @@ const Category = () => {
             >
               <div className=" flex flex-col  justify-center items-center gap-4  ">
                 <img
-                  className=" h-[12rem] w-[12rem] rounded-full"
+                  className=" h-[12rem] w-[12rem] rounded-full hover:rotate-6 hover:scale-105 transition duration-150 ease-in-out"
                   src={category.categoryImage}
                   alt=""
                 />
