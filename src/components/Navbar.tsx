@@ -65,6 +65,7 @@ const Navbar = () => {
       </div>
 
       {/* search  */}
+      <div className=" hidden md:block">
       <div className=" relative border-2 border-cyan-500 flex justify-center items-center rounded-2xl px-1 py-1 gap-1">
         <IoIosSearch size={18} />
         <input value={text} onChange={handleChange} className=" outline-none" type="text" />
@@ -75,6 +76,7 @@ const Navbar = () => {
             ))}
           </div>
         ) : ('')}
+      </div>
       </div>
 
       {/* icons  */}
