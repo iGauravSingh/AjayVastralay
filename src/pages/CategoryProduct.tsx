@@ -1,4 +1,4 @@
-import React from 'react'
+
 
 import { productData } from '../utils/data/data'
 import { useParams } from 'react-router-dom'
