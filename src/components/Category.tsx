@@ -1,9 +1,13 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { categoryData } from "../utils/data/data"
+import { Link } from "react-router-dom";
+
 
 
 const Category = () => {
+ 
+
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const [startX, setStartX] = useState<number>(0);
   const [scrollLeft, setScrollLeft] = useState<number>(0);
@@ -64,6 +68,7 @@ const Category = () => {
               key={category.id}
               className=" flex-none snap-center touch-pan-x cursor-pointer  "
             >
+              <Link to={`/category/${category.categoryIdentity}`} >
               <div className=" flex flex-col  justify-center items-center gap-4  ">
                 <img
                   className=" h-[12rem] w-[12rem] rounded-full hover:rotate-6 hover:scale-105 transition duration-150 ease-in-out"
@@ -72,6 +77,7 @@ const Category = () => {
                 />
                 <p>{category.categoryName}</p>
               </div>
+              </Link>
             </div>
           ))}
           </div>

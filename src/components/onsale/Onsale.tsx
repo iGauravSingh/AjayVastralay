@@ -7,22 +7,22 @@ const Onsale = () => {
   // for mobile screen
   const [salepart, setSalePart] = useState("first");
 
-  const [mobileSale,setMObileSale] = useState(saleData?.slice(0, 3))
+  const [mobileSale, setMObileSale] = useState(saleData?.slice(0, 3));
 
   const handleFirst = () => {
-    setSalePart('first')
-    setMObileSale(saleData?.slice(0, 3))
-  }
+    setSalePart("first");
+    setMObileSale(saleData?.slice(0, 3));
+  };
 
   const handleSecond = () => {
-    setSalePart('second')
-    setMObileSale(saleData?.slice(3, 6))
-  }
+    setSalePart("second");
+    setMObileSale(saleData?.slice(3, 6));
+  };
 
   const handleThird = () => {
-    setSalePart('third')
-    setMObileSale(saleData?.slice(6, 9))
-  }
+    setSalePart("third");
+    setMObileSale(saleData?.slice(6, 9));
+  };
 
   return (
     <div className=" w-screen flex justify-center items-center mt-8 mb-12 font-poppins">
@@ -34,6 +34,7 @@ const Onsale = () => {
             <div className=" flex flex-col gap-3">
               {saleData?.slice(0, 3).map((sale) => (
                 <CardSale
+                  id={sale.id}
                   image={sale.productImage}
                   name={sale.productName}
                   stars={sale.stars}
@@ -45,6 +46,7 @@ const Onsale = () => {
             <div className=" flex flex-col gap-3">
               {saleData?.slice(3, 6).map((sale) => (
                 <CardSale
+                  id={sale.id}
                   image={sale.productImage}
                   name={sale.productName}
                   stars={sale.stars}
@@ -56,6 +58,7 @@ const Onsale = () => {
             <div className=" flex flex-col gap-3">
               {saleData?.slice(6, 9).map((sale) => (
                 <CardSale
+                  id={sale.id}
                   image={sale.productImage}
                   name={sale.productName}
                   stars={sale.stars}
@@ -67,23 +70,39 @@ const Onsale = () => {
           </div>
         </div>
         {/* mobile view  */}
-        <div className=" w-screen md:hidden"> 
-        <div className=" flex flex-col gap-3">
-        {mobileSale?.map((sale) => (
-                  <CardSale
-                    image={sale.productImage}
-                    name={sale.productName}
-                    stars={sale.stars}
-                    price={sale.price}
-                    discount={sale.discount}
-                  />
-                ))}
-            </div>
-            <div className=" flex justify-center items-center gap-2 mt-6">
-              <p onClick={handleFirst} className={`${salepart === 'first' ? 'bg-cyan-500': 'bg-slate-700'} w-4 h-4 rounded-full  cursor-pointer`}></p>
-              <p onClick={handleSecond} className={`${salepart === 'second' ? 'bg-cyan-500': 'bg-slate-700'} w-4 h-4 rounded-full  cursor-pointer`}></p>
-              <p onClick={handleThird} className={`${salepart === 'third' ? 'bg-cyan-500': 'bg-slate-700'} w-4 h-4 rounded-full  cursor-pointer`}></p>
-            </div>
+        <div className=" w-screen md:hidden">
+          <div className=" flex flex-col gap-3">
+            {mobileSale?.map((sale) => (
+              <CardSale
+                id={sale.id}
+                image={sale.productImage}
+                name={sale.productName}
+                stars={sale.stars}
+                price={sale.price}
+                discount={sale.discount}
+              />
+            ))}
+          </div>
+          <div className=" flex justify-center items-center gap-2 mt-6">
+            <p
+              onClick={handleFirst}
+              className={`${
+                salepart === "first" ? "bg-cyan-500" : "bg-slate-700"
+              } w-4 h-4 rounded-full  cursor-pointer`}
+            ></p>
+            <p
+              onClick={handleSecond}
+              className={`${
+                salepart === "second" ? "bg-cyan-500" : "bg-slate-700"
+              } w-4 h-4 rounded-full  cursor-pointer`}
+            ></p>
+            <p
+              onClick={handleThird}
+              className={`${
+                salepart === "third" ? "bg-cyan-500" : "bg-slate-700"
+              } w-4 h-4 rounded-full  cursor-pointer`}
+            ></p>
+          </div>
         </div>
       </div>
     </div>

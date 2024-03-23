@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 
 
 interface bstSaleDataProps {
-    
+    id: number;
     productName: string;
     productImage: string;
     price: number;
@@ -9,8 +10,9 @@ interface bstSaleDataProps {
     
 }
 
-const Card = ({productName,productImage,price,discount}:bstSaleDataProps) => {
+const Card = ({id,productName,productImage,price,discount}:bstSaleDataProps) => {
   return (
+    <Link to={`/product/${id}`} >
     <div className=" flex flex-col font-poppins mb-10" >
         <div className=" relative cursor-pointer">
             <img className=" rounded-lg" src={productImage} alt={productName} />
@@ -24,6 +26,7 @@ const Card = ({productName,productImage,price,discount}:bstSaleDataProps) => {
         </div>
         
     </div>
+    </Link>
   )
 }
 

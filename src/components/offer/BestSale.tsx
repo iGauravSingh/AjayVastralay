@@ -64,6 +64,7 @@ const BestSale = () => {
             {bestSaleData.map((bestSale) => (
               <div className=" flex-none snap-center touch-pan-x">
                 <Card
+                id={bestSale.id}
                   productName={bestSale.productName}
                   productImage={bestSale.productImage}
                   price={bestSale.price}

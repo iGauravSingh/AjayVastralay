@@ -40,7 +40,7 @@ const Footer = () => {
           {/* follow us ? */}
           <div className=" ml-12">
             <h4 className=" mt-8 text-xl mb-4">Follow Us</h4>
-            <div className=" flex gap-5">
+            <div className=" flex gap-5 ml-4">
               <FaFacebook size={25} color=""  />
               <FaInstagramSquare size={25} color=""  />
             </div>

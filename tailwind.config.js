@@ -7,6 +7,7 @@ export default {
   theme: {
     fontFamily: {
       "poppins": "Poppins",
+      "caveat": "Caveat"
     },
     extend: {
       keyframes: {
