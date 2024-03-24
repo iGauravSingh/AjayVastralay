@@ -6,7 +6,7 @@ import { FaInstagramSquare } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <div className=" w-screen h-[400px] bg-pink-300 flex justify-center font-poppins">
+    <div className=" w-screen md:h-[400px]  bg-pink-300 flex justify-center font-poppins">
 
       <div className=" w-[85%] flex mt-2 mb-10">
         {/* About us  */}

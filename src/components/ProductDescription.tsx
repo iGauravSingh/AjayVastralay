@@ -59,12 +59,12 @@ const ProductDescription: React.FC<Product> = ({
 };
 
   return (
-    <div className="flex p-4">
+    <div className="flex flex-col md:flex-row justify-center md:items-start items-center p-4">
       <img src={productImage} alt={productName} className="w-1/2 rounded-lg mr-4" />
       <div className="flex flex-col w-1/2">
         <div>
           <h2 className="text-xl font-semibold">{productName}</h2>
-          <p className="text-gray-600">{productDescription}</p>
+          <p className="text-gray-600 text-justify">{productDescription}</p>
           <div className="flex items-center mt-2">
           <p className=" text-cyan-500">{!discount ? (<p>${price}</p>) : (<p>
           ${Math.round(price * (1 - discount / 100) * 100) / 100} <span className=" line-through text-red-400">${price}</span> 
@@ -75,8 +75,9 @@ const ProductDescription: React.FC<Product> = ({
             <StarGiver rating={stars} />
           </div>
         </div>
-        <div className="flex items-center mt-4">
-          <button
+        <div className="flex flex-col md:flex-row items-center mt-4">
+         <div>
+         <button
             onClick={() => handleQuantityChange(-1)}
             className="bg-gray-200 text-gray-700 px-3 py-1 rounded-full mr-2"
           >
@@ -89,9 +90,10 @@ const ProductDescription: React.FC<Product> = ({
           >
             +
           </button>
+         </div>
           <button
             onClick={handleAddToCart}
-            className=" ml-10 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+            className=" md:ml-10 mt-4 md:mt-0 bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
           >
             Add to Cart
           </button>

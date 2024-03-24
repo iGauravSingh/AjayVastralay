@@ -15,7 +15,7 @@ const Card = ({id,productName,productImage,price,discount}:bstSaleDataProps) => 
     <Link to={`/product/${id}`} >
     <div className=" flex flex-col font-poppins mb-10" >
         <div className=" relative cursor-pointer">
-            <img className=" rounded-lg" src={productImage} alt={productName} />
+            <img className=" rounded-lg w-[150px] md:w-[250px]" src={productImage} alt={productName} />
             { discount > 0 && <p className=" absolute top-2 left-2 w-8 h-5 bg-black text-white text-center text-sm font-extralight rounded-md">-{discount}%</p>}
         </div>
         <div className=" flex flex-col gap-2 justify-center items-center">
