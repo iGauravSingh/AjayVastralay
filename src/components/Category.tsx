@@ -71,7 +71,7 @@ const Category = () => {
               <Link to={`/category/${category.categoryIdentity}`} >
               <div className=" flex flex-col  justify-center items-center gap-4  ">
                 <img
-                  className=" h-[8rem] md:h-[12rem] w-[8rem] md:w-[12rem] rounded-full hover:rotate-6 hover:scale-105 transition duration-150 ease-in-out"
+                  className=" h-[5rem] md:h-[12rem] w-[5rem] md:w-[12rem] rounded-full hover:rotate-6 hover:scale-105 transition duration-150 ease-in-out"
                   src={category.categoryImage}
                   alt=""
                 />
