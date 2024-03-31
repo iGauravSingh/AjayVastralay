@@ -8,14 +8,18 @@ import Banner from '../components/Banner'
 import Onsale from '../components/onsale/Onsale'
 import BottomBanner from '../components/BottomBanner'
 import Footer from '../components/Footer'
+import useCategoryList from '../hooks/useCategory'
 
 const Homepage = () => {
+
+  const { data, loading, error } = useCategoryList()
+
   return (
     <>
     <Topbar />
-    <Navbar />
+    <Navbar catData={data} />
     <Hero />
-    <Category />
+    <Category catData={data} />
     <Offer />
     <Banner />
     <Onsale />

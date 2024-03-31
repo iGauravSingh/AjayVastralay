@@ -18,7 +18,7 @@ const CardSale = ({ id,image, name, stars, price, discount }: CardSaleProps) => 
         <img className=" w-[80px]" src={image} alt="product" />
       </div>
       <div className=" flex flex-col gap-2">
-        <Link to={`/product/${id}`} ><p>{name}</p></Link>
+        <Link to={`/`} ><p>{name}</p></Link>
         <StarGiver rating={stars} />
         <p className=" text-cyan-500">
           ${Math.round(price * (1 - discount / 100) * 100) / 100} <span className=" line-through text-red-400">${price}</span> 

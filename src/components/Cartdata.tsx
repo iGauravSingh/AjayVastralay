@@ -1,6 +1,7 @@
 import { useContext } from 'react'
 
 import { ShopContext } from './contexts/ShopContexts'
+import { Link } from 'react-router-dom';
 
 
 
@@ -15,10 +16,10 @@ export default function Cartdata() {
 
      
 
-    const handleCheckout = () => {
-        // Implement checkout logic here
-        console.log("Checkout clicked");
-    };
+    // const handleCheckout = () => {
+    //     // Implement checkout logic here
+    //     console.log("Checkout clicked");
+    // };
 
     const totalCalulator = (price : number, quantity: number) => {
        return  Math.round(price * quantity * 100)/100
@@ -37,18 +38,18 @@ export default function Cartdata() {
                                 <div className='flex gap-4 mb-4 items-center justify-between' key={item.id}>
                                     <p>{item.productName}</p>
                                     <p>{item.quantity}</p>
-                                    <p className='font-medium'>$ {Math.round(item.price * 100) /100}</p>
-                                    <p className='font-medium'>$ {totalCalulator(item.price, item.quantity)}</p>
+                                    <p className='font-medium'>₹ {Math.round(item.price * 100) /100}</p>
+                                    <p className='font-medium'>₹ {totalCalulator(item.price, item.quantity)}</p>
                                     
                                 </div>
                             ))}
 
                             <div className='flex justify-between items-center mt-8 font-bold text-2xl md:text-3xl border-t-2 pt-8'>
                                 <p>TOTAL AMOUNT</p>
-                                <p>$ {totalAmount}</p>
+                                <p>₹ {totalAmount}</p>
                             </div>
                             <div className='text-center mt-8'>
-                                <button className='bg-slate-950 text-white w-[30%] px-2 md:px-4  py-1 md:py-2 text-sm md:text-base' onClick={handleCheckout}>CHECKOUT</button>
+                                <Link to='/checkout'><button className='bg-slate-950 text-white w-[30%] px-2 md:px-4  py-1 md:py-2 text-sm md:text-base'>CHECKOUT</button></Link>
                             </div>
                         </div>
                     )}

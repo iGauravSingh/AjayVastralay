@@ -66,8 +66,8 @@ const ProductDescription: React.FC<Product> = ({
           <h2 className="text-xl font-semibold">{productName}</h2>
           <p className="text-gray-600 text-justify">{productDescription}</p>
           <div className="flex items-center mt-2">
-          <p className=" text-cyan-500">{!discount ? (<p>${price}</p>) : (<p>
-          ${Math.round(price * (1 - discount / 100) * 100) / 100} <span className=" line-through text-red-400">${price}</span> 
+          <p className=" text-cyan-500">{!discount ? (<p>₹{price}</p>) : (<p>
+            ₹{Math.round(price * (1 - discount / 100) * 100) / 100} <span className=" line-through text-red-400">₹{price}</span> 
         </p>)}</p>
           </div>
           <div className="flex items-center mt-2">

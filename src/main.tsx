@@ -18,6 +18,13 @@ import CategoryProduct from './pages/CategoryProduct.tsx';
 import ProductDetail from './pages/ProductDetail.tsx';
 import Notfound from './pages/Notfound.tsx';
 import { ShopContextProvider } from './components/contexts/ShopContexts.tsx';
+import AuthControl from './pages/auth/AuthControl.tsx';
+import { Provider } from 'react-redux';
+import { store } from './app/store.ts';
+import UserProfile from './pages/Profile.tsx';
+import PayPalCheckoutButton from './pages/Checkout.tsx';
+import AdminControl from './pages/admin/AdminControl.tsx';
+import AdminLogin from './pages/admin/AdminLogin.tsx';
 
 
 const router = createBrowserRouter(
@@ -29,6 +36,15 @@ const router = createBrowserRouter(
       <Route path="/cart" element={<Cart />} />
       <Route path="/about" element={<About />} />
       <Route path="/category" element={<CategoryList />} />
+      <Route path="/auth" element={<AuthControl />} />
+      <Route path="/profile" element={<UserProfile />} />
+      <Route path="/checkout" element={<PayPalCheckoutButton />} />
+
+      {/* protected routes  */}
+      <Route path="/admin" element={<AdminLogin />} />
+      <Route path="/adminsignin" element={<AdminControl />} />
+      {/* // */}
+
       <Route path="/category/:categoryIdentity" element={<CategoryProduct />} />
       <Route path="/product/:id" element={<ProductDetail />} />
       <Route path="*" element={<Notfound />} /> 
@@ -39,8 +55,10 @@ const router = createBrowserRouter(
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
+    <Provider store={store}>
     <ShopContextProvider>
     <RouterProvider router={router} />
     </ShopContextProvider>
+    </Provider>
   </React.StrictMode>,
 )

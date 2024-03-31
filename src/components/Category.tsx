@@ -5,7 +5,9 @@ import { Link } from "react-router-dom";
 
 
 
-const Category = () => {
+
+const Category = ({catData}) => {
+ 
  
 
   const [isDragging, setIsDragging] = useState<boolean>(false);
@@ -63,7 +65,8 @@ const Category = () => {
         >
           {/* Add your content here */}
             <div className=" flex flex-nowrap gap-6 ">
-          {categoryData.map((category) => (
+            
+          {catData?.map((category) => (
             <div
               key={category.id}
               className=" flex-none snap-center touch-pan-x cursor-pointer  "

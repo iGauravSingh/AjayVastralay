@@ -2,10 +2,14 @@ import React, {  useRef, useState } from "react";
 
 import { bestSaleData } from "../../utils/data/data";
 import Card from "./Card";
+import useProduct from "../../hooks/useProduct";
 // const temData = bestSaleData[0]
 // console.log(temData)
 
 const BestSale = () => {
+
+  const {data, loading, error} = useProduct()
+
   const [isDragging, setIsDragging] = useState<boolean>(false);
   const [startX, setStartX] = useState<number>(0);
   const [scrollLeft, setScrollLeft] = useState<number>(0);
@@ -61,7 +65,7 @@ const BestSale = () => {
         >
           {/* Add your content here */}
           <div className=" flex flex-nowrap gap-6 ">
-            {bestSaleData.map((bestSale) => (
+            {data?.map((bestSale) => (
               <div className=" flex-none snap-center touch-pan-x">
                 <Card
                 id={bestSale.id}

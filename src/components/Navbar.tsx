@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useSelector } from "react-redux";
 import { CiHeart } from "react-icons/ci";
 import { BsCart2 } from "react-icons/bs";
 import { GiHamburgerMenu } from "react-icons/gi";
@@ -5,13 +7,26 @@ import { IoIosArrowDown } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { useShopContext } from "./contexts/ShopContexts";
 import { IoIosSearch } from "react-icons/io";
+import { CgProfile } from "react-icons/cg";
+import { LuLogIn } from "react-icons/lu";
 
 // category data
- import { categoryData } from "../utils/data/data";
-import { useState } from "react";
+import { RootState } from "../app/store";
+
+
 
 // remember to worrk with mobile first design
-const Navbar = () => {
+
+// interface NavbarProps {
+
+// }
+
+const Navbar = ({catData}) => {
+
+  const { user, isLoading } = useSelector((state: RootState) => state.user.value)
+
+  
+
 
   const [text,setText] = useState('')
 
@@ -71,8 +86,8 @@ const Navbar = () => {
         <input value={text} onChange={handleChange} className=" outline-none" type="text" />
         { text.length > 0 ? (
           <div className=" absolute top-8 w-full pl-2 pt-2 pb-1  border-2 border-cyan-500 bg-white rounded-lg z-40 flex flex-col">
-            {categoryData.map((cat) => (
-              <Link to={`/category/${cat.categoryIdentity}`}><p>{cat.categoryName.toLocaleLowerCase().includes(text) ? cat.categoryName : ''}</p></Link>
+            {catData?.map((cat) => (
+              <Link key={cat.id} to={`/category/${cat.id}`}><p>{cat.categoryName.toLocaleLowerCase().includes(text) ? cat.categoryName : ''}</p></Link>
             ))}
           </div>
         ) : ('')}
@@ -81,7 +96,14 @@ const Navbar = () => {
 
       {/* icons  */}
       <div className=" flex gap-6 mr-2 md:mr-5">
-        <CiHeart size={25} />
+      <div>
+              { (user && !isLoading) ? (
+                <Link className="hover:text-cyan-600 text-lg font-semibold" to='/profile'><CgProfile size={25} /></Link>
+              ) : (
+                <Link className="hover:text-cyan-600 text-lg font-semibold" to='/auth'><LuLogIn size={25} /></Link>
+              )}
+              
+            </div>
         <div className=" relative">
           <Link to="/cart">
             <BsCart2 size={25} />
