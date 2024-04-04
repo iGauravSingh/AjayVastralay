@@ -25,6 +25,7 @@ import UserProfile from './pages/Profile.tsx';
 import PayPalCheckoutButton from './pages/Checkout.tsx';
 import AdminControl from './pages/admin/AdminControl.tsx';
 import AdminLogin from './pages/admin/AdminLogin.tsx';
+import Feedback from './pages/Feedback.tsx';
 
 
 const router = createBrowserRouter(
@@ -39,6 +40,7 @@ const router = createBrowserRouter(
       <Route path="/auth" element={<AuthControl />} />
       <Route path="/profile" element={<UserProfile />} />
       <Route path="/checkout" element={<PayPalCheckoutButton />} />
+      <Route path="/feedback" element={<Feedback />} />
 
       {/* protected routes  */}
       <Route path="/admin" element={<AdminLogin />} />

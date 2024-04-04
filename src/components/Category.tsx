@@ -1,9 +1,12 @@
 
 import React, { useEffect, useRef, useState } from "react";
-import { categoryData } from "../utils/data/data"
 import { Link } from "react-router-dom";
 
+// interface CategoryProps {
+//   id: number;
+//   categoryName: string;
 
+// }
 
 
 const Category = ({catData}) => {

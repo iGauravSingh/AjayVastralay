@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 
 
 export default function Cartdata() {
-    const { shop } = useContext(ShopContext)
+    const { shop,setShop } = useContext(ShopContext)
 
     // Calculate total amount
     const totalAmount = shop.reduce((acc, item) => acc + (item.price * item.quantity * 100) /100, 0);
@@ -23,6 +23,10 @@ export default function Cartdata() {
 
     const totalCalulator = (price : number, quantity: number) => {
        return  Math.round(price * quantity * 100)/100
+    }
+
+    const handleDelete = (id:any) => {
+        setShop(shop.filter((item)=> item.id !== id ))
     }
 
     return (
@@ -40,6 +44,7 @@ export default function Cartdata() {
                                     <p>{item.quantity}</p>
                                     <p className='font-medium'>₹ {Math.round(item.price * 100) /100}</p>
                                     <p className='font-medium'>₹ {totalCalulator(item.price, item.quantity)}</p>
+                                    <p onClick={()=>handleDelete(item.id)} className=' text-red-500 border-2 border-red-600 px-2 py-1 cursor-pointer'>Remove</p>
                                     
                                 </div>
                             ))}
@@ -49,7 +54,7 @@ export default function Cartdata() {
                                 <p>₹ {totalAmount}</p>
                             </div>
                             <div className='text-center mt-8'>
-                                <Link to='/checkout'><button className='bg-slate-950 text-white w-[30%] px-2 md:px-4  py-1 md:py-2 text-sm md:text-base'>CHECKOUT</button></Link>
+                                <Link to='/checkout'><button className='bg-slate-950 text-white w-[30%] px-2 md:px-4  py-1 md:py-2 text-sm md:text-base'>Buy Now</button></Link>
                             </div>
                         </div>
                     )}

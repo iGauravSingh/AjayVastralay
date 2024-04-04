@@ -75,6 +75,11 @@ const Navbar = ({catData}) => {
                 <li>Contact Us</li>
               </Link>
             </div>
+            <div className=" flex gap-1 justify-center items-center">
+              <Link to="/feedback">
+                <li>Feedback</li>
+              </Link>
+            </div>
           </ul>
         </div>
       </div>

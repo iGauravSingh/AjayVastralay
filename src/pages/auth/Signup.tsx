@@ -45,6 +45,7 @@ const SignUp = () => {
             type="text"
             name="name"
             placeholder="Name"
+            required
             value={formData.name}
             onChange={handleChange}
           />
@@ -59,6 +60,7 @@ const SignUp = () => {
             type="email"
             name="email"
             placeholder="Email"
+            required
             value={formData.email}
             onChange={handleChange}
           />
@@ -73,6 +75,7 @@ const SignUp = () => {
             type="password"
             name="password"
             placeholder="Password"
+            required
             value={formData.password}
             onChange={handleChange}
           />
@@ -87,6 +90,7 @@ const SignUp = () => {
             type="text"
             name="address"
             placeholder="Address"
+            required
             value={formData.address}
             onChange={handleChange}
           />
@@ -101,6 +105,7 @@ const SignUp = () => {
             type="text"
             name="phoneNumber"
             placeholder="Phone Number"
+            required
             value={formData.phoneNumber}
             onChange={handleChange}
           />

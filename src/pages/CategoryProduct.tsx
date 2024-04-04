@@ -11,7 +11,7 @@ import useProduct from '../hooks/useProduct'
 const CategoryProduct = () => {
 
   const { categoryIdentity } = useParams(); // Getting category ID from URL
-  //console.log('useparams value',categoryIdentity)
+  console.log('useparams value',categoryIdentity)
   const { categoryProduct } = useProduct(); // Using your custom hook
   const id = categoryIdentity
   const [catPro, setCatPro] = useState([]); // State to store the category products

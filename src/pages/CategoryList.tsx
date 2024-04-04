@@ -20,6 +20,7 @@ const CategoryList = () => {
                 key={category.id}
                 className="  cursor-pointer  "
               >
+                <p>{category.id}</p>
                 <Link to={`/category/${category.id}`}>
                   <div className=" flex flex-col  justify-center items-center gap-4 mb-10 ">
                     <img

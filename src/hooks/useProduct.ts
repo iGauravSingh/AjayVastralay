@@ -91,7 +91,7 @@ const useProduct = () => {
 
 
   const categoryProduct = async (data: any) => {
-    console.log('in category product')
+    console.log('in category product', data)
     try {
       const response = await axios.get(`${urllocal}/products/categoryproducts/${data}`);
       const categoryProductData = response.data;
